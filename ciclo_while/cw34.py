@@ -1,34 +1,23 @@
 '''
-    En un cine se quiere saber cuánto se recaudó a lo largo de un día, sabiendo que el valor de la
-    entrada es de tres pesos,. que existen tres puertas de acceso y en el cine hay tres funciones
-    diarias TA: tarde; NO: noche y TN: trasnoche. En cada lectura ingresarán el número de
-    puerta por el que ingresaron los espectadores, la cantidad de entradas vendidas y el código
-    de la función. El fin de proceso queda él cargo del alumno.
+    En un estadio de fútbol se quiere saber cuántas personas asistieron a presenciar un partido.
+    En cada lectura se ingresarán la cantidad de personas que ingresaron por una de las veinte
+    entradas, y el precio de la entrada. El proceso deberá concluir cuando el número de
+    integrantes sea cero, o se complete la información de las veinte entradas, es decir
+    ingresaron personas por todas las entradas posibles y no se permite mas ingreso.
 '''
 
-recaudado = 0
+entradas = 0
 
-i = 0
+total_personas = 0
 
-print('''
-    Puertas:
-        TA: Tarde [1]
-        NO: Noche [2]
-        TN: Trasnoche [3]
-''')
-
-while i < 5:
-    i += 1
-
-    print('---- Pelicula nueva ----')
-    puerta = int(input('Ingrese el numero de la puerta: '))
-    if puerta > 3 or puerta < 1:
-        print('Puerta incorrecta')
+while entradas < 20:
+    entradas += 1
+    personas = int(input('Cantidad de personas ingresadas por entrada: '))
+    if personas == 0:
         break
+    
+    precio = float(input('Ingrese el valor de la entrada: $'))
+    
+    total_personas = total_personas + personas
 
-    entradas = int(input('Ingrese la cantidad de entradas vendidas: '))
-    codigo = int(input('Ingrese el codigo de la funcion: '))
-
-    recaudado = recaudado + (entradas * 3)
-
-print(f'El total recaudado fue: ${recaudado}')
+print(f'Ingresaron un total de {total_personas} personas al estadio.')
