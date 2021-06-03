@@ -4,18 +4,7 @@
     vendido por cada empleado durante el período controlado.
 '''
 
-ventas_superiores101 = 0
-ventas_superiores102 = 0
-ventas_superiores103 = 0
-ventas_superiores104 = 0
-
-print('''
-    Legajos disponibles:
-        101
-        102
-        103
-        104
-''')
+empleados_superiores = 0
 
 while True:
     print('---- Venta nueva ----')
@@ -23,12 +12,10 @@ while True:
 
     if legajo == 0:
         break
-    elif legajo != 101 or legajo != 102 or legajo != 103 or legajo != 104:
-        break
 
     venta = float(input('Ingrese el valor de la venta $'))
 
     if venta > 10000:
+        empleados_superiores = empleados_superiores + 1
 
-# NO TERMINADO
-        
+print(f'Hay un total de {empleados_superiores} empleados que vendieron mas de $100000')
