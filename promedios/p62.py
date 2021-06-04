@@ -8,24 +8,32 @@
 
 suma_mayor = 0
 i = 0
+totalpares = 0
 promedio = 0
+existen_neg = False
 
 while suma_mayor < 1000:
     i += 1
 
-    num = int(input('Ingrese un valor: '))
-    if num < 0:
-        print('Numero negativo!')
-        pass
-    
-    if num % 2 == 0 and i % 2 != 0:
-        num_impar = num
-        promedio = promedio + num_impar
+    print('---- Nuevo numero ----')
+    num = int(input('Ingresar un numero: '))
 
+    if num % 2 == 0:
+        if num < 0:
+            existen_neg = True
+            pass
+        if i % 2 != 0:
+            totalpares += num
+            promedio += 1
+        
     if num % 2 != 0:
         suma_mayor += num
+       
+    
 
-    print(i)
+print(f'El promedio de los numeros pares con orden impar es: {totalpares / promedio}')
 
-print(f'El promedio es: {promedio / i}')
-print(f'La suma de los numeros impares es: {suma_mayor}')
+if existen_neg == True:
+    print('Tambien existen numeros negativos dentro de la serie')
+
+print(f'Y la suma de los numeros impares es: {suma_mayor}')
